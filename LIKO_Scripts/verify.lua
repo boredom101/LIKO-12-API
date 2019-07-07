@@ -44,7 +44,7 @@ function plugins.isDocumented(data, _errors)
       table.insert(errors, "Peripheral " .. peripheral .. " is not documented.")
     else
       for method, _ in pairs(methods) do
-        if not data[peripheral][method] then
+        if not data[peripheral].methods[method] then
           flag = false
           table.insert(errors, "Method " .. method .. " in peripheral " .. peripheral .. " is not documented.")
         end
